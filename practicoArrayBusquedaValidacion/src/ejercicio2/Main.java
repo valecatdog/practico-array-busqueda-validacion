@@ -13,27 +13,25 @@ public class Main {
         int edad;
         String club;
         boolean repetido;
+        boolean seguir;
+        String strSeguir;
+
      
-        
-        
-        
-     
-        for(int i = 0; i < 7; i++){//se rompe en club
+        do{
             repetido = false;
-        System.out.print("Ingrese el nombre: ");
-        nombre = scan.next();
-        System.out.print("Ingrese el apellido: ");
-        apellido = scan.nextLine(); 
-        scan.nextLine();
-        System.out.print("Ingrese la edad: ");
-        edad = scan.nextInt();
-        System.out.print("Ingrese el club: ");
-        club = scan.nextLine();
+            System.out.print("Ingrese el nombre: ");
+            nombre = scan.nextLine();
+            System.out.print("Ingrese el apellido: ");
+            apellido = scan.nextLine(); 
+            System.out.print("Ingrese la edad: ");
+            edad = scan.nextInt();
+            scan.nextLine();//porque si no no me sigue leyendo club
+            System.out.print("Ingrese el club: ");
+            club = scan.nextLine();
             
             
             for (Estudiante est : estudiantes){
                 if (est.getNombre().equals(nombre) && (est.getApellido().equals(apellido))){
-                    //no me sale lo de que el apellido sea distinto
                     repetido = true;
                     break;
                 }
@@ -47,7 +45,14 @@ public class Main {
             }
         
             System.out.println(estudiantes);
-        }
+            
+              System.out.print("Desea continuar ingresando estudiantes? (s/n): ");
+              strSeguir = scan.nextLine
+        ();
+              seguir = strSeguir.equals("s");
+
+        }while(seguir);
+        
     }
     //todo mal endentado help
     
